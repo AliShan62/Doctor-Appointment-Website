@@ -1,0 +1,20 @@
+.form-container{
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+
+}
+
+.Registerform{
+border: 1px solid gray;
+padding: 50px;
+font-size: large;
+font-family: sans-serif;
+width: 28%;
+}
+
+.button-text{
+    display: flex;
+    flex-direction: row;
+}
