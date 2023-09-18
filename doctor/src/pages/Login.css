@@ -1,28 +1,8 @@
 body{
+    background-color: #1c1c1c;
     font-family: 'Lato', sans-serif;
-
 }
 
-.form-container{
- display:flex;
- align-items: center;
- justify-content: center;
- height: 100vh;
-
-}
-
-.Registerform{
-border: 1px solid gray;
-padding: 50px;
-font-size: large;
-font-family: sans-serif;
-
-}
-
-.button-text{
-    display: flex;
-    flex-direction: row;
-}
 
 /* CSS for the continuously animated border */
 .animated-border-container {
@@ -32,9 +12,9 @@ font-family: sans-serif;
     height: 100%;
     border: 4px solid transparent;
     border-radius: 5px;
-    animation: moveBorder 4s linear infinite;
+    animation: moveBorder 4s linear infinite ;
     transition: all ease;
-
+    
 }
 
 @keyframes moveBorder {
@@ -55,12 +35,12 @@ font-family: sans-serif;
     50% {
         border-color: #45f3ff transparent transparent transparent;
         /* Bottom to Left (Blue) */
-        animation-delay: -1.5s;
+    animation-delay: -1.5s;
         margin: 0;
     }
 
     75% {
-        border-color: transparent #ff2770 transparent transparent;
+        border-color: transparent #ff2770  transparent transparent;
         /* Left to Top (Blue) */
         animation-delay: -3s;
         margin: 0;

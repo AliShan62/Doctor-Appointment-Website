@@ -1,0 +1,44 @@
+/* Styles for larger screens (Desktop and Laptop) */
+
+.center-content {
+    text-align: center;
+    font-family: sans-serif;
+    color: blue;
+    font-size: 1.5rem;
+}
+
+.pagination {
+    text-align: center;
+    padding-top: 10px;
+    background: white;
+}
+
+/* Media query for tablets (Max-width: 768px) */
+@media (max-width: 768px) {
+    .center-content {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query for mobile devices (Max-width: 480px) */
+@media (max-width: 480px) {
+    .center-content {
+        font-size: 1rem;
+    }
+}
+
+/* Media query for a specific mobile device resolution (Max-width: 740px and Max-height: 685px) */
+@media (max-width: 740px) and (max-height: 685px) {
+    .center-content {
+        text-align: center;
+        font-family: sans-serif;
+        color: blue;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        /* padding-left: 200px; Note: You may want to remove or adjust this style */
+    }
+}

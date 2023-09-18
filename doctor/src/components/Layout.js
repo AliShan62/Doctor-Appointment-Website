@@ -1,21 +1,42 @@
 import React from 'react';
 import '../components/Layout.css';
 import { adminMenue, userMenue } from '../Data/data';
-import { Link, useLocation} from 'react-router-dom'; // Import Outlet for nested routes
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Badge, message } from 'antd';
-//import HomePage from '../pages/Home';
 
-
-function Layout({children}) {
+function Layout({ children }) {
   const location = useLocation();
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
 
-  // Check if user is available and has the isAdmin property defined
+  // Check if the user is available and has the isAdmin property defined
   const isAdminUser = user && user.isAdmin;
 
   // Determine the appropriate sidebar menu based on the user's role
-  const sidebarMenu = isAdminUser ? adminMenue : userMenue;
+  const doctorMenu = [
+    {
+      name: 'Home',
+      path: '/',
+      icon: 'fa-solid fa-house',
+    },
+    {
+      name: 'Appointment',
+      path: '/doctor-appointments',
+      icon: 'fa-solid fa-list',
+    },
+    {
+      name: 'Profile',
+      path: `/doctor/profile/${user?._id}`,
+      icon: 'fa-solid fa-user',
+    },
+  ];
+
+  const sidebarMenu = isAdminUser
+    ? adminMenue
+    : user?.isDoctor
+    ? doctorMenu
+    : userMenue;
 
   const handleLogout = () => {
     localStorage.clear();
@@ -24,17 +45,17 @@ function Layout({children}) {
 
   return (
     <>
-      <div className='main'>
+      <div className='main' style={{ fontFamily: 'sans-serif' }}>
         <div className='Layout'>
           <div className='sidebar'>
             <div className='logo'>
-              <h6>DOC APP</h6>
+              <h6>DoctorAppointment</h6>
               <hr />
             </div>
             <div className='menu'>
               {sidebarMenu.map((menu, index) => {
                 const isActive = location.pathname === menu.path;
-                
+
                 return (
                   <div
                     key={index}
@@ -53,19 +74,24 @@ function Layout({children}) {
           </div>
           <div className='content'>
             <div className='header'>
-              <div className='header-content'>
-                  <Badge count={user && user.notifcation}>
-                   <i className='fa-solid fa-bell'></i>
-                  </Badge>
-                
+              <div
+                className='header-content'
+                style={{ cursor: 'pointer' }}
+              >
+                <Badge
+                  count={
+                    user && user.notification ? user.notification.length : 0
+                  }
+                  onClick={() => {
+                    navigate('/notification');
+                  }}
+                >
+                  <i className='fa-solid fa-bell'></i>
+                </Badge>
                 <Link to='/profile'>{user?.name}</Link>
               </div>
             </div>
-            <div className='body'>
-              {/* Use Outlet to render nested routes */}
-               {children}  
-             
-            </div>
+            <div className='body'>{children}</div>
           </div>
         </div>
       </div>

@@ -41,16 +41,18 @@ function Register() {
   };
 
   return (
-    <div className="form-container">
-      <form className="Registerform" onSubmit={handleSubmit}>
+    <div className="form-container ">
+      <div className="box">
+      <form className="Registerform animated-border-container" onSubmit={handleSubmit}>
+        
         <div>
-          <h1 style={{ textAlign: "center ", marginBottom: "30px" }}>
+          <h1 style={{ textAlign: "center ", marginBottom: "30px", color:"white" }}>
             Register Form
           </h1>
         </div>
 
         <div className="mb-3 pb-3">
-          <label htmlFor="name" className="form-label">
+          <label htmlFor="name" className="form-label" style={{ color:"white" }}>
             Name
           </label>
           <input
@@ -69,7 +71,7 @@ function Register() {
         </div>
 
         <div className="mb-3 pb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
+          <label htmlFor="exampleInputEmail1" className="form-label" style={{ color:"white" }}>
             Email address
           </label>
           <input
@@ -86,13 +88,13 @@ function Register() {
               }))
             }
           />
-          <div id="emailHelp" className="form-text">
+          <div id="emailHelp" className="form-text" style={{ color:"white" }}>
             We'll never share your email with anyone else.
           </div>
         </div>
 
         <div className="mb-3 pb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
+          <label htmlFor="exampleInputPassword1" className="form-label" style={{ color:"white" }}>
             Password
           </label>
           <input
@@ -122,21 +124,23 @@ function Register() {
               }))
             }
           />
-          <label className="form-check-label" htmlFor="checked">
+          <label className="form-check-label" htmlFor="checked" style={{ color:"white" }}>
             Check me out
           </label>
         </div>
         <div className="button-text">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" style={{ color:"white" }}>
             Register
           </button>
           <Link to="/Login">
-            <h6 className="mt-3" style={{ marginLeft: "50px" }}>
+            <h6 className="mt-3" style={{ marginLeft: "50px",color:"blue" }}>
               Already User Login Here
             </h6>
           </Link>
         </div>
-      </form>
+       
+       </form>
+      </div>
     </div>
   );
 }

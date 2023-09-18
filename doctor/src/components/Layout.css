@@ -1,96 +1,127 @@
-.main{
+/* Default styles for larger screens */
+.main {
     padding: 10px;
     height: 100vh;
 }
 
-.Layout{
+.Layout {
     display: flex;
 }
 
-.sidebar{
-    
-    width:350px ;
-    height: 98vh;
-    border-radius:5px ;
-    background-color:rgb(51,1,1) ;
-    box-shadow:0 0 2px gray ;
-    margin-right:20px ;
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    border-radius: 5px;
+    background-color: rgb(51, 1, 1);
+    box-shadow: 0 0 2px gray;
+    margin-right: 20px;
     color: white;
 }
 
-.content{
+.content {
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
 
-.header{
+.header {
     height: 10vh;
     margin-bottom: 20px;
     box-shadow: 0 0 2px gray;
-   background-color: white;
-
+    background-color: white;
 }
 
-.body{
-        height: 85vh;
-        margin-bottom: 20px;
-        box-shadow: 0 0 2px gray;
-        background-color: white;
+.body {
+    height: 88vh;
+    margin-bottom: 20px;
+    box-shadow: 0 0 2px gray;
+    background-color: white;
 }
 
-.logo h6{
-  font-size: 1.5rem;
-  margin:20px 0px;
-  text-align: center;
-}  
+.logo h6 {
+    font-size: 1.5rem;
+    margin: 20px 0px;
+    text-align: center;
+}
 
-.menu{
+.menu {
     margin-top: 50px;
 }
-.menu-items{
+
+.menu-items {
     margin-top: 30px;
     font-size: 1.2rem;
 }
 
-.menu-items a{
+.menu-items a {
     text-decoration: none;
     color: white;
 }
 
-.menu-items i{
-font-size: 1.2rem;
-margin: 0px 15px ;
-
+.menu-items i {
+    font-size: 1.2rem;
+    margin: 0px 15px;
 }
 
-.active{
-    color: rgb(51,1,1);
+.active {
+    color: rgb(51, 1, 1);
     background-color: white;
     padding: 10px;
 }
 
-.active a ,.active i{
- color: rgb(51, 1, 1);
-
+.active a,
+.active i {
+    color: rgb(51, 1, 1);
 }
 
-.header-content{
+.header-content {
     display: flex;
     align-items: center;
-    justify-content:flex-end;
-    height: 50px;
+    justify-content: flex-end;
+    height: 70px;
     margin: 0px 15px;
 }
 
-.header-content i{
+.header-content i {
     margin-right: 10px;
     font-size: 1.2rem;
 }
 
 .header-content a {
     text-decoration: none;
-    color:blue;
-   margin: 0px 10px;
-   text-transform: uppercase;
-   font-size: 1.2rem;
+    color: blue;
+    margin: 0px 10px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .Layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    /* Add any additional tablet-specific styles here */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .menu-items {
+        font-size: 1rem;
+    }
+
+    .menu-items i {
+        font-size: 1rem;
+    }
+
+    .header-content a {
+        font-size: 1rem;
+    }
+
+    /* Add any additional mobile-specific styles here */
 }
